@@ -52,3 +52,5 @@ As chaves privadas RSA nunca são armazenadas no banco de dados, apenas no dispo
 A chave secreta do JWT deve ser armazenada em variáveis de ambiente para evitar vazamentos.
 Conexões seguras:
 Todas as comunicações entre cliente e servidor devem usar HTTPS para evitar interceptação de dados.
+
+
