@@ -1,6 +1,4 @@
-O usuário informa seus dados, incluindo nome, e-mail e senha.
-
- Cadastro de usuario
+Cadastro de usuario
 Antes de armazenar a senha no banco de dados, o sistema utiliza o algoritmo bcrypt para hashing.
 Isso garante que a senha original nunca seja salva diretamente,
 tornando mais difícil que seja descoberta em caso de vazamento de dados.
