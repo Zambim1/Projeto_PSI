@@ -5,9 +5,7 @@ tornando mais difícil que seja descoberta em caso de vazamento de dados.
 
 Login
 O usuário insere e-mail e senha para autenticação.
- 
 O sistema verifica se o e-mail está cadastrado e compara a senha informada com o hash armazenado usando bcrypt.
- 
 Se a senha estiver correta, um Token JWT (JSON Web Token) é gerado.
 Esse token contém informações do usuário e permite que ele acesse
 funcionalidades protegidas do sistema sem precisar fazer login novamente por um período determinado.
