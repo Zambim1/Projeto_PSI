@@ -1,0 +1,27 @@
+O usuário informa seus dados, incluindo nome, e-mail e senha.
+
+ Cadastro de usuario
+Antes de armazenar a senha no banco de dados, o sistema utiliza o algoritmo bcrypt para hashing.
+Isso garante que a senha original nunca seja salva diretamente,
+tornando mais difícil que seja descoberta em caso de vazamento de dados.
+
+Login
+O usuário insere e-mail e senha para autenticação.
+ 
+O sistema verifica se o e-mail está cadastrado e compara a senha informada com o hash armazenado usando bcrypt.
+ 
+Se a senha estiver correta, um Token JWT (JSON Web Token) é gerado.
+Esse token contém informações do usuário e permite que ele acesse
+funcionalidades protegidas do sistema sem precisar fazer login novamente por um período determinado.
+
+Enviar mensagem
+Antes de ser salva no banco de dados, a mensagem é criptografada usando o algoritmo AES (Advanced Encryption Standard).
+ 
+AES é uma criptografia simétrica, o que significa que a mesma chave usada para criptografar a mensagem será necessária para descriptografá-la depois.
+Essa chave AES é então criptografada com RSA (criptografia assimétrica)
+e armazenada de forma segura para garantir que apenas o destinatário correto consiga acessá-la.
+
+Receber mensagem
+Quando o destinatário acessa a mensagem, primeiro ele usa sua chave privada RSA para descriptografar a chave AES que protege a mensagem.
+Com a chave AES recuperada, o sistema pode descriptografar a mensagem original e exibi-la ao usuário.
+Esse processo garante que somente o destinatário correto consiga ler a mensagem, mesmo que os dados armazenados sejam comprometidos. 
